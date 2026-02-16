@@ -1,0 +1,66 @@
+# Rules that govern the AI-powered discovery conversation.
+# These are guardrails — the AI is conversational within these bounds.
+
+discovery:
+  min_questions: 2
+  max_questions: 8
+
+  must_confirm:
+    - project_type
+    - core_features
+
+  budget_awareness:
+    suggest_minimal: |
+      Only recommend essential features and basic tier variants.
+      Do not surface premium options unless the client explicitly asks.
+      Frame suggestions as "what you need" not "what's available."
+    suggest_balanced: |
+      Recommend basic and standard tier variants.
+      Mention premium options exist but don't push them.
+      Frame suggestions as "good value options."
+    suggest_full: |
+      Show all tier variants with recommendations.
+      Highlight best-value options.
+      Mention premium add-ons as "worth considering."
+    suggest_full_plus_premium: |
+      Show all tier variants and premium add-ons.
+      Recommend the best options regardless of cost.
+      Present optional enhancements proactively.
+
+  project_types:
+    - id: website
+      label: "Website / Branding Site"
+      description: "Marketing sites, portfolios, business branding, landing pages"
+    - id: web_app
+      label: "Web Application"
+      description: "SaaS, dashboards, portals, admin panels, CRUD apps"
+    - id: mobile
+      label: "Mobile App"
+      description: "iOS/Android native or cross-platform apps"
+    - id: api
+      label: "API / Backend Service"
+      description: "REST/GraphQL APIs, microservices, backend systems"
+    - id: ecommerce
+      label: "E-Commerce"
+      description: "Online stores with product catalog, cart, checkout"
+    - id: custom
+      label: "Custom / Mixed"
+      description: "Combination of above or unique project type"
+
+output_format: |
+  ═══════════════════════════════════════════════════
+    PROJECT SCOPE: {client_name}
+    Client: {country} | Budget Tier: {tier} ({multiplier}x)
+    Date: {date}
+  ═══════════════════════════════════════════════════
+
+    SELECTED FEATURES:
+
+    {numbered_feature_list}
+
+    ─────────────────────────────────────────────────
+    TOTAL                                   ${total}
+    ═════════════════════════════════════════════════
+
+    OPTIONAL ADD-ONS:
+    {optional_addons_list}
