@@ -1,0 +1,80 @@
+# Budget tiers define regional pricing multipliers.
+# base_price × multiplier = client price.
+# The "premium" tier (1.0x) IS the base price — all others scale down.
+
+tiers:
+  starter:
+    multiplier: 0.30
+    countries:
+      - India
+      - Bangladesh
+      - Nepal
+      - Pakistan
+      - Sri Lanka
+    suggestion_mode: suggest_minimal
+    description: >
+      Cost-conscious markets. Recommend only essentials and basic tier variants.
+      Premium features hidden unless explicitly requested.
+
+  growth:
+    multiplier: 0.50
+    countries:
+      - Indonesia
+      - Vietnam
+      - Philippines
+      - Brazil
+      - Mexico
+      - Poland
+      - Romania
+      - Nigeria
+      - Kenya
+      - Thailand
+      - Colombia
+      - Argentina
+      - Egypt
+      - South Africa
+    suggestion_mode: suggest_balanced
+    description: >
+      Growing tech markets. Show basic and standard variants.
+      Premium available on request.
+
+  standard:
+    multiplier: 0.75
+    countries:
+      - Germany
+      - France
+      - Japan
+      - South Korea
+      - Australia
+      - Canada
+      - Italy
+      - Spain
+      - Netherlands
+      - Sweden
+      - Israel
+      - New Zealand
+    suggestion_mode: suggest_full
+    description: >
+      Established markets. Show all variants with value recommendations.
+
+  premium:
+    multiplier: 1.0
+    countries:
+      - United States
+      - United Kingdom
+      - UAE
+      - Singapore
+      - Switzerland
+      - Norway
+      - Denmark
+      - Qatar
+      - Saudi Arabia
+    suggestion_mode: suggest_full_plus_premium
+    description: >
+      Top-tier markets. Show all variants including premium add-ons and
+      optional enhancements.
+
+# Calibration reference:
+# GAKO Technologies branding site (US, premium): $500
+# Same scope (India, starter): ~Rs. 10,000-15,000 (~$150)
+# Ratio: 0.30x confirmed against real project data.
