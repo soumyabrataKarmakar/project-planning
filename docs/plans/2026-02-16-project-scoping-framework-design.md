@@ -340,14 +340,69 @@ project-planning/
 │       ├── communication.yaml
 │       ├── integrations.yaml
 │       └── data.yaml
+├── skills/
+│   ├── scope.md               # Main skill (routes to sub-skills)
+│   ├── scope-new.md           # New scoping session flow
+│   ├── scope-list.md          # List saved projects
+│   ├── scope-view.md          # View a project
+│   ├── scope-edit.md          # Edit a project
+│   ├── scope-catalog.md       # Manage feature catalog
+│   └── scope-tiers.md         # Manage budget tiers
 ├── projects/
-│   └── (saved scoping sessions)
-├── docs/
-│   └── plans/
-│       └── (this file)
-└── src/
-    └── (implementation code — CLI tool, AI prompts, etc.)
+│   └── (saved scoping sessions as YAML)
+└── docs/
+    └── plans/
+        └── (design documents)
 ```
+
+---
+
+## Component 6: Trigger Mechanism — Claude Code Skill/Plugin
+
+The framework is implemented as a **Claude Code skill** invoked via slash commands.
+
+### Slash Commands
+
+| Command | Purpose |
+|---|---|
+| `/scope new` | Start a new client scoping session (full flow: profile → discovery → features → pricing) |
+| `/scope list` | List all saved project scopes |
+| `/scope view <name>` | View a saved project scope with full pricing breakdown |
+| `/scope edit <name>` | Reopen and modify a saved scope (change features, tier, etc.) |
+| `/scope catalog` | View or edit the feature catalog |
+| `/scope tiers` | View or edit budget tier multipliers |
+
+### How It Works
+
+The skill is registered as a Claude Code plugin. When `/scope new` is invoked:
+
+1. The skill loads all config files (feature catalog, budget tiers, discovery rules)
+2. Injects them into the AI system prompt as structured context
+3. The AI then guides the user through the 4-step scoping flow
+4. On completion, saves the session to `projects/` as YAML
+5. Outputs the formatted pricing breakdown
+
+### Skill Architecture
+
+```
+skills/
+├── scope.md              # Main skill definition (slash command entry point)
+├── scope-new.md          # New scoping session flow
+├── scope-list.md         # List saved projects
+├── scope-view.md         # View a project
+├── scope-edit.md         # Edit a project
+├── scope-catalog.md      # Manage feature catalog
+└── scope-tiers.md        # Manage budget tiers
+```
+
+Each skill file contains the prompt template and instructions that Claude Code follows when the command is invoked. The AI's intelligence comes from having the feature catalog loaded in context — no custom code needed for the discovery engine.
+
+### Why This Approach
+
+- **No separate application to build** — the AI runtime IS Claude Code
+- **Config-driven** — all pricing, features, and rules are in YAML files
+- **Extensible** — add new features by editing YAML, add new commands by adding skill files
+- **Portable** — the skill files + config can be shared or version-controlled
 
 ---
 
