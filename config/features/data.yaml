@@ -1,0 +1,53 @@
+category: Data & Content
+description: Data management, search, and content features
+
+bundles:
+  - name: CRUD Operations
+    description: Create, read, update, delete interface for data entities
+    includes: Data forms, validation, listing with pagination, detail views
+    project_types: [web_app, ecommerce, api]
+    base_price: 200
+    scope: Full CRUD interface per data entity with validation and pagination
+    dependencies: [Deployment & Setup]
+    suggested_with: [Search & Filtering]
+
+  - name: Search & Filtering
+    description: Search functionality with filters and sorting
+    includes: Search bar, filters, sorting options, results display
+    project_types: [web_app, ecommerce]
+    tier_variants:
+      basic:
+        scope: Simple text search with basic filters
+        base_price: 100
+      standard:
+        scope: Full-text search, multi-field filters, saved searches, sort options
+        base_price: 250
+    dependencies: [CRUD Operations]
+
+  - name: File Uploads
+    description: Upload and manage files (images, documents, media)
+    includes: Upload UI, cloud storage, file preview, size/type validation
+    project_types: [web_app, ecommerce, mobile]
+    tier_variants:
+      basic:
+        scope: Single file upload with size/type validation, cloud storage
+        base_price: 100
+      standard:
+        scope: Multi-file upload, drag-and-drop, image preview, progress bar
+        base_price: 200
+    dependencies: [Deployment & Setup]
+
+  - name: Data Export
+    description: Export data to CSV, Excel, or PDF
+    includes: Export button, format selection, download
+    project_types: [web_app, ecommerce]
+    base_price: 100
+    scope: Export data tables to CSV/Excel with column selection
+    dependencies: [CRUD Operations]
+
+  - name: Rich Text Editor
+    description: WYSIWYG content editor for creating formatted content
+    includes: Editor component, formatting tools, image embed, preview
+    project_types: [web_app]
+    base_price: 100
+    scope: Rich text editor with formatting, images, links, and preview

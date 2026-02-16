@@ -1,0 +1,40 @@
+category: Integrations
+description: Third-party service integrations
+
+bundles:
+  - name: Analytics Integration
+    description: Website or app analytics tracking
+    includes: Analytics provider setup, event tracking, dashboard access
+    project_types: [website, web_app, ecommerce, mobile]
+    base_price: 75
+    scope: Google Analytics / Mixpanel setup with custom event tracking
+    suggested_with: [Branding Website, SEO Optimization]
+
+  - name: Social Media Integration
+    description: Social sharing, feeds, or login via social platforms
+    includes: Share buttons, social feeds, OAuth login via social providers
+    project_types: [website, web_app, mobile]
+    base_price: 100
+    scope: Social share buttons, Open Graph tags, optional social login
+    suggested_with: [User Authentication, Branding Website]
+
+  - name: Third-Party API Integration
+    description: Connect to external services (CRM, shipping, maps, etc.)
+    includes: API client setup, data sync, error handling, webhook support
+    project_types: [web_app, ecommerce, api, mobile]
+    tier_variants:
+      basic:
+        scope: Single API integration with basic data sync
+        base_price: 150
+      standard:
+        scope: Multiple API integrations with webhook support and retry logic
+        base_price: 400
+    suggested_with: []
+
+  - name: CRM Integration
+    description: Connect to CRM platforms (HubSpot, Salesforce, etc.)
+    includes: CRM provider setup, lead capture, data sync
+    project_types: [web_app, ecommerce]
+    base_price: 200
+    scope: CRM integration with lead capture from forms and basic data sync
+    dependencies: [Contact/Query Integration]

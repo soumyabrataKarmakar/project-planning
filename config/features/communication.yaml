@@ -1,0 +1,46 @@
+category: Communication & Notifications
+description: Email, SMS, push notifications, and messaging features
+
+bundles:
+  - name: Email Notifications
+    description: Transactional and system emails
+    includes: Email templates, triggers, delivery via email service
+    project_types: [web_app, ecommerce, mobile]
+    tier_variants:
+      basic:
+        scope: Basic transactional emails (welcome, password reset) via SendGrid/SES
+        base_price: 100
+      standard:
+        scope: Custom templates, multiple triggers, email preferences, tracking
+        base_price: 250
+    dependencies: [User Authentication]
+    suggested_with: [User Authentication]
+
+  - name: SMS Integration
+    description: SMS notifications for alerts and verification
+    includes: SMS provider setup, templates, delivery tracking
+    project_types: [web_app, ecommerce, mobile]
+    base_price: 150
+    scope: SMS via Twilio/SNS for OTP, alerts, and notifications
+    dependencies: [User Authentication]
+
+  - name: In-App Messaging / Chat
+    description: Real-time messaging between users or with support
+    includes: Chat UI, message storage, real-time delivery, read receipts
+    project_types: [web_app, mobile]
+    tier_variants:
+      basic:
+        scope: Simple support chat widget (Crisp/Intercom integration)
+        base_price: 100
+      standard:
+        scope: Custom built chat with real-time messaging, history, notifications
+        base_price: 500
+    dependencies: [User Authentication]
+
+  - name: Push Notifications
+    description: Browser or mobile push notifications
+    includes: Push service setup, notification triggers, user preferences
+    project_types: [web_app, mobile]
+    base_price: 150
+    scope: Push notification setup with configurable triggers and user opt-in
+    dependencies: [User Authentication]

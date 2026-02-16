@@ -1,0 +1,44 @@
+category: Mobile
+description: Mobile-specific features and deployment
+
+bundles:
+  - name: Mobile App Core
+    description: Base mobile application with navigation and core screens
+    includes: App shell, navigation, core screens, responsive layouts
+    project_types: [mobile]
+    tier_variants:
+      basic:
+        scope: Cross-platform (React Native/Flutter), 3-5 screens, basic navigation
+        base_price: 500
+      standard:
+        scope: 5-10 screens, tab/drawer navigation, onboarding flow, theming
+        base_price: 900
+      premium:
+        scope: 10+ screens, complex navigation, animations, offline support
+        base_price: 1500
+    dependencies: [Deployment & Setup]
+    suggested_with: [User Authentication, Push Notifications]
+
+  - name: App Store Deployment
+    description: Publishing to Apple App Store and Google Play Store
+    includes: Store listing, screenshots, build signing, submission
+    project_types: [mobile]
+    base_price: 150
+    scope: App store listing, screenshots, metadata, build signing, and submission
+    dependencies: [Mobile App Core]
+
+  - name: Offline Mode
+    description: App functionality when device is offline
+    includes: Local data caching, sync on reconnect, offline indicators
+    project_types: [mobile]
+    base_price: 300
+    scope: Local data storage with background sync when connection restores
+    dependencies: [Mobile App Core]
+
+  - name: Device Features
+    description: Camera, GPS, biometrics, and other native device capabilities
+    includes: Camera access, location services, biometric auth, file access
+    project_types: [mobile]
+    base_price: 200
+    scope: Integration with 1-2 device features (camera, GPS, biometrics)
+    dependencies: [Mobile App Core]

@@ -1,0 +1,43 @@
+category: Authentication & Users
+description: User account management, login, and access control
+
+bundles:
+  - name: User Authentication
+    description: Allow users to register, log in, and manage their accounts
+    includes: Registration, login, session management
+    project_types: [web_app, mobile, ecommerce]
+    tier_variants:
+      basic:
+        scope: Email/password registration and login, session handling
+        base_price: 200
+      standard:
+        scope: Basic + OAuth (Google/GitHub), password reset, email verification
+        base_price: 400
+      premium:
+        scope: Standard + 2FA, SSO, advanced session management, account lockout
+        base_price: 700
+    dependencies: [Deployment & Setup]
+    suggested_with: [User Profiles, Role-Based Access]
+
+  - name: User Profiles
+    description: User profile pages with editable personal information
+    includes: Profile page, avatar upload, edit form, public/private settings
+    project_types: [web_app, mobile]
+    base_price: 150
+    scope: Profile page with editable fields, avatar, and display settings
+    dependencies: [User Authentication]
+    suggested_with: [User Authentication]
+
+  - name: Role-Based Access
+    description: Permission system with multiple user roles
+    includes: Role definitions, permission gates, admin role management
+    project_types: [web_app, mobile]
+    tier_variants:
+      basic:
+        scope: Two roles (admin/user) with basic permission checks
+        base_price: 150
+      standard:
+        scope: Multiple custom roles, granular permissions, role management UI
+        base_price: 350
+    dependencies: [User Authentication]
+    suggested_with: [Admin Panel]

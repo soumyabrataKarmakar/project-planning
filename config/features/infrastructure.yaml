@@ -1,0 +1,46 @@
+category: Infrastructure & Deployment
+description: Hosting, deployment, and operational setup
+
+bundles:
+  - name: Deployment & Setup
+    description: Initial hosting, domain, and deployment configuration
+    includes: Hosting setup, domain config, SSL certificate, basic deployment
+    project_types: [website, web_app, ecommerce, api, mobile]
+    tier_variants:
+      basic:
+        scope: Shared hosting or free tier, manual deployment, SSL
+        base_price: 50
+      standard:
+        scope: Cloud hosting (Vercel/Railway/AWS), CI/CD pipeline, SSL, domain
+        base_price: 150
+    suggested_with: [Backup System]
+
+  - name: Admin Panel
+    description: Back-office interface for managing content, users, and data
+    includes: Dashboard, data tables, CRUD operations, user management
+    project_types: [web_app, ecommerce]
+    tier_variants:
+      basic:
+        scope: Simple admin with data tables and basic CRUD
+        base_price: 250
+      standard:
+        scope: Full admin panel with charts, filters, bulk actions, export
+        base_price: 500
+    dependencies: [User Authentication, Role-Based Access]
+    suggested_with: [Role-Based Access]
+
+  - name: Backup System
+    description: Automated data backup and recovery
+    includes: Scheduled backups, cloud storage, recovery procedures
+    project_types: [web_app, ecommerce, api]
+    base_price: 100
+    scope: Automated daily backups to cloud storage with restore capability
+    dependencies: [Deployment & Setup]
+
+  - name: CI/CD Pipeline
+    description: Continuous integration and deployment automation
+    includes: Auto-testing on push, staging environment, automated deployment
+    project_types: [web_app, api]
+    base_price: 150
+    scope: GitHub Actions or similar — test on push, auto-deploy to staging/production
+    dependencies: [Deployment & Setup]

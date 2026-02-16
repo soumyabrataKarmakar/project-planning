@@ -1,0 +1,34 @@
+category: Payments & Billing
+description: Payment processing, subscriptions, and financial features
+
+bundles:
+  - name: Payment Gateway
+    description: Accept payments via credit card, UPI, or other methods
+    includes: Payment provider integration, checkout flow, payment confirmation
+    project_types: [web_app, ecommerce, mobile]
+    tier_variants:
+      basic:
+        scope: Single payment provider (Stripe/Razorpay), one-time payments
+        base_price: 250
+      standard:
+        scope: Multiple providers, saved cards, payment history, refund support
+        base_price: 500
+    dependencies: [User Authentication, Deployment & Setup]
+    suggested_with: [Invoice Generation, Subscription Billing]
+
+  - name: Subscription Billing
+    description: Recurring payment plans with subscription management
+    includes: Plan selection, recurring billing, upgrade/downgrade, cancellation
+    project_types: [web_app, ecommerce]
+    base_price: 400
+    scope: Subscription plans, recurring billing, plan management, usage tracking
+    dependencies: [Payment Gateway, User Authentication]
+    suggested_with: [Payment Gateway]
+
+  - name: Invoice Generation
+    description: Generate and manage invoices for orders or services
+    includes: Invoice template, PDF generation, email delivery, invoice history
+    project_types: [web_app, ecommerce]
+    base_price: 200
+    scope: Auto-generated invoices with PDF export and email delivery
+    dependencies: [Payment Gateway]
