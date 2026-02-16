@@ -1,0 +1,67 @@
+category: Website & Branding
+description: Features for marketing sites, portfolios, and business branding
+
+bundles:
+  - name: Branding Website
+    description: Professional multi-page business/marketing website
+    includes: Custom design, responsive layout, navigation, footer, hero section, content sections
+    project_types: [website, ecommerce]
+    tier_variants:
+      basic:
+        scope: Up to 3 pages, template-based design, responsive layout
+        base_price: 200
+      standard:
+        scope: Up to 6 pages, custom design, animations, hero with media
+        base_price: 400
+      premium:
+        scope: 10+ pages, premium design, micro-interactions, parallax, CMS integration
+        base_price: 700
+    dependencies: [Deployment & Setup]
+    suggested_with: [Contact/Query Integration, SEO Optimization]
+
+  - name: Landing Page
+    description: Single-page focused site for a product, campaign, or service
+    includes: Hero, features section, testimonials, CTA, responsive design
+    project_types: [website]
+    base_price: 150
+    scope: Single page with multiple sections, responsive, optimized for conversions
+    dependencies: [Deployment & Setup]
+    suggested_with: [Contact/Query Integration, Analytics Integration]
+
+  - name: Blog / CMS
+    description: Content management system for publishing articles and updates
+    includes: Article listing, individual post pages, categories, author pages
+    project_types: [website, web_app]
+    tier_variants:
+      basic:
+        scope: Static blog with markdown content, no admin panel
+        base_price: 150
+      standard:
+        scope: CMS with admin panel, rich text editor, image uploads, categories
+        base_price: 350
+    dependencies: [Deployment & Setup]
+    suggested_with: [SEO Optimization, Analytics Integration]
+
+  - name: Portfolio / Gallery
+    description: Showcase work, projects, or products with visual layouts
+    includes: Grid/masonry layout, lightbox, filtering, responsive images
+    project_types: [website]
+    base_price: 150
+    scope: Visual gallery with filtering and lightbox, responsive
+    dependencies: [Deployment & Setup]
+    suggested_with: [Contact/Query Integration]
+
+  - name: SEO Optimization
+    description: Search engine optimization setup
+    includes: Meta tags, sitemap, structured data, Open Graph, page speed optimization
+    project_types: [website, web_app, ecommerce]
+    base_price: 100
+    scope: Technical SEO setup — meta tags, sitemap.xml, robots.txt, structured data, OG tags
+
+  - name: Contact/Query Integration
+    description: Contact form with delivery to email or messaging platform
+    includes: Form design, validation, email/WhatsApp delivery, confirmation
+    project_types: [website, web_app, ecommerce]
+    base_price: 50
+    scope: Contact form with field validation and email delivery
+    suggested_with: [Branding Website, Landing Page]
