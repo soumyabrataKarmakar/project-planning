@@ -1,0 +1,156 @@
+client:
+  name: "Arambagh Seeds Farm"
+  brand: "Mahan"
+  country: "India"
+  industry: "Agriculture / Seeds (primarily offline sales)"
+
+budget:
+  tier: "starter"
+  original_multiplier: 0.30
+  multiplier: 0.20
+  override: true
+  override_reason: "Client commitment at ₹15,000 — multiplier adjusted from 0.30x to 0.20x with 25% discount applied"
+  currency: "INR"
+  exchange_rate: 84
+
+project_type: "custom"
+project_type_notes: "Hybrid — Branding website + Dealer portal (conditional pricing on same site)"
+
+discovery:
+  description: >
+    Arambagh Seeds Farm (brand: Mahan) is an agriculture/seeds business operating
+    primarily offline. They need a branding website with a product catalog (no public
+    prices) and a dealer system where registered dealers can log in and see their
+    custom prices. Admin needs to manage categories, products, dealers, and per-dealer
+    pricing. Contact form needed. Design may be additional cost.
+  key_decisions:
+    - question: "How many pages for the website?"
+      answer: "Up to 6 pages — Home, About, Products, Brand (Mahan), Contact, additional"
+    - question: "How does dealer signup work?"
+      answer: "Dealers self-register, admin approves/rejects from panel"
+    - question: "How does dealer pricing work?"
+      answer: "Per-dealer custom prices set by admin. Public catalog shows no prices. Logged-in dealers see their configured prices."
+    - question: "Do dealers need a separate portal?"
+      answer: "No — dealers see the same website but with prices visible when logged in"
+    - question: "Does the product catalog need categories?"
+      answer: "Yes, products organized by seed type/category"
+    - question: "Budget constraint?"
+      answer: "Promised ₹15,000 for development, design additional if needed"
+
+selected_features:
+  - bundle: "Deployment & Setup"
+    variant: "basic"
+    base_price: 50
+    final_price_usd: 10
+    final_price_inr: 840
+    scope: >
+      Domain configuration and DNS setup. SSL certificate (HTTPS).
+      Shared hosting or free-tier cloud setup. Manual deployment pipeline.
+      Environment configuration (production).
+
+  - bundle: "Branding Website"
+    variant: "standard"
+    base_price: 400
+    final_price_usd: 80
+    final_price_inr: 6720
+    scope: >
+      Up to 6 custom-designed pages: Home (hero, highlights, CTA), About Us
+      (company story, mission), Products (catalog with categories, no prices),
+      Brand — Mahan (brand identity), Contact Us, additional page.
+      Fully mobile responsive. Custom animations and transitions.
+      Professional navigation with mobile hamburger menu.
+      Footer with business info, links, social icons.
+
+  - bundle: "Contact/Query Integration"
+    variant: null
+    base_price: 50
+    final_price_usd: 10
+    final_price_inr: 840
+    scope: >
+      Contact form with field validation (name, email, phone, message, subject).
+      CAPTCHA integration (reCAPTCHA/hCaptcha) for bot/spam protection.
+      Email delivery to business inbox. Success/error confirmation messages.
+      Form submission rate limiting.
+
+  - bundle: "SEO Optimization"
+    variant: null
+    base_price: 100
+    final_price_usd: 20
+    final_price_inr: 1680
+    scope: >
+      Meta title and description for all pages. Sitemap.xml auto-generation.
+      Robots.txt configuration. Structured data / JSON-LD markup.
+      Open Graph tags for social sharing. Page speed optimization basics.
+      Heading hierarchy and semantic HTML.
+
+  - bundle: "User Authentication"
+    variant: "basic"
+    base_price: 200
+    final_price_usd: 40
+    final_price_inr: 3360
+    scope: >
+      Dealer self-registration form (name, business name, email, phone, password).
+      CAPTCHA on registration for bot prevention. Email/password login with
+      session management. Password reset via email. Admin approval workflow:
+      new dealer gets pending status, admin approves/rejects, dealer notified.
+      Secure session handling and logout.
+
+  - bundle: "Role-Based Access"
+    variant: "basic"
+    base_price: 150
+    final_price_usd: 30
+    final_price_inr: 2520
+    scope: >
+      Two roles: Admin and Dealer. Admin gets full back-office panel access.
+      Dealer sees website with custom prices visible (if configured).
+      Permission-gated routes and UI elements. Public visitors see products
+      without prices. Logged-in dealers see their custom prices only.
+      Unauthorized access redirects.
+
+  - bundle: "Admin Panel"
+    variant: "basic"
+    base_price: 250
+    final_price_usd: 50
+    final_price_inr: 4200
+    scope: >
+      Mobile responsive admin interface. Dashboard with overview stats.
+      Category management: add/edit/delete categories, ordering, status.
+      Product management: add/edit/delete products, details (name, description,
+      image, unit, weight/size, category), status toggle.
+      Dealer management: view all, approve/reject pending, activate/deactivate,
+      view profiles. Per-dealer custom pricing: set unique price per product
+      per dealer, view/edit pricing table per dealer.
+
+included_extras:
+  - "CAPTCHA integration on all public forms (contact, registration)"
+  - "Mobile responsive design for both website and admin panel"
+
+subtotal_inr: 20160
+discount_percent: 25
+discount_amount_inr: 5160
+total_inr: 15000
+total_usd: 179
+
+notes: >
+  Design work (custom UI/UX design) is not included and will be
+  quoted separately as additional cost if needed.
+
+optional_addons:
+  - bundle: "Analytics Integration"
+    base_price: 75
+    final_price_inr: 1260
+    scope: "Google Analytics / Mixpanel setup with custom event tracking"
+
+  - bundle: "Email Notifications"
+    variant: "basic"
+    base_price: 100
+    final_price_inr: 1680
+    scope: "Transactional emails (welcome, password reset, approval) via SendGrid/SES"
+
+  - bundle: "Search & Filtering"
+    variant: "basic"
+    base_price: 100
+    final_price_inr: 1680
+    scope: "Simple text search with basic category filters on product catalog"
+
+created: "2026-02-18"
