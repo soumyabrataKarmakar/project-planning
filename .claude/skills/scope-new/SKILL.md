@@ -101,8 +101,9 @@ Generate the final pricing breakdown using this format:
 After the user confirms the pricing output:
 
 1. Generate a YAML file with the full session data
-2. Save to `projects/YYYY-MM-DD-{client-name-slug}.yaml`
-3. Use this schema:
+2. Create a project folder: `projects/{client-name-slug}/` (lowercase, hyphens, no dates in folder name)
+3. Save the scope YAML to `projects/{client-name-slug}/scope.yaml`
+4. Use this schema:
 
 ```yaml
 client:
@@ -141,4 +142,5 @@ optional_addons:
 created: "{ISO date}"
 ```
 
-4. Confirm the file was saved and show the path
+5. Confirm the file was saved and show the path: `projects/{client-name-slug}/scope.yaml`
+6. Mention that any related assets (images, wireframes, notes) should be placed in the same `projects/{client-name-slug}/` folder

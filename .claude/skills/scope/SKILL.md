@@ -23,4 +23,19 @@ Route to the appropriate sub-skill based on the command:
 3. If no sub-command specified or just `/scope` invoked, show the command list above and ask which they want
 
 **Config directory:** `.claude/skills/scope-data/`
-**Projects directory:** `projects/`
+**Projects directory:** `projects/` — each project has its own subfolder: `projects/{client-slug}/`
+
+## Project Folder Convention
+
+Every project gets its own folder under `projects/`. The folder name is the client-name-slug (lowercase, hyphens). All project-related files go inside this folder:
+
+```
+projects/
+  {client-slug}/
+    scope.yaml          ← project scope (always named scope.yaml)
+    *.jpeg / *.png      ← reference images, wireframes, screenshots
+    notes.md            ← optional notes, meeting summaries
+    ...                 ← any other project-specific assets
+```
+
+All scope skills MUST use this convention when creating, reading, listing, or editing projects.

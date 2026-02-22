@@ -7,9 +7,9 @@ description: Use when editing or modifying a saved client project scope, changin
 
 ## Load Data
 
-1. If a project name was provided, find the matching YAML file in `projects/` using Glob
+1. If a project name was provided, find the matching project folder in `projects/*/scope.yaml` using Glob (match against folder name)
 2. If not found, invoke scope-list skill to show available projects
-3. Read the selected YAML file
+3. Read the selected project's `scope.yaml` file
 4. Also load:
    - Feature catalog: Read ALL files in `.claude/skills/scope-data/features/`
    - Budget tiers: Read `.claude/skills/scope-data/budget-tiers.yaml`
@@ -39,5 +39,6 @@ Ask what they want to change using AskUserQuestion:
 ## Save
 
 When done editing:
-1. Write the updated YAML back to the SAME file path
-2. Confirm: "Scope updated and saved to {file_path}"
+1. Write the updated YAML back to the SAME `scope.yaml` file in the project folder
+2. If client name changed significantly, ask if they want to rename the project folder to match
+3. Confirm: "Scope updated and saved to projects/{client-slug}/scope.yaml"
